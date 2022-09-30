@@ -1,11 +1,15 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Linking } from "react-native";
 import Topo from "./Components/Topo";
 import Detalhes from "./Components/Detalhes";
-import { Container, Layer } from "./styles";
+import { Container, Layer, BackButton, ButtonWarpper, Back } from "./styles";
 import layut from "../../assets/layout.png";
+import back from "../../assets/back.png";
 
 export default function Cesta({ topo, detalhes }) {
+  const handleClick = async () => {
+    await Linking.openURL("https://master--pedrocoelhoportfolio.netlify.app/");
+  };
   return (
     <>
       <Layer src={layut} />
@@ -15,6 +19,11 @@ export default function Cesta({ topo, detalhes }) {
           <Topo {...topo} />
           <View style={estilos.cesta}>
             <Detalhes {...detalhes} />
+            <ButtonWarpper>
+              <BackButton onClick={handleClick}>
+                <Back src={back} />
+              </BackButton>
+            </ButtonWarpper>
           </View>
         </View>
       </Container>
