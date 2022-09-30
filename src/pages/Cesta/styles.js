@@ -14,3 +14,17 @@ export const Container = styled.div`
 export const Layer = styled.img`
   position: absolute;
 `;
+export const BackButton = styled.button`
+  border: none;
+  background-color: white;
+  :active {
+    transform: translateY(4px);
+  }
+`;
+export const ButtonWarpper = styled.div`
+  margin-top: 60px;
+`;
+export const Back = styled.img`
+  width: 24px;
+  height: 24px;
+`;
