@@ -1,13 +1,15 @@
 import React from "react";
-import { Dimensions, StyleSheet } from "react-native";
-import Texto from "../../../Components/Texte";
+import { Image, StyleSheet, Dimensions } from "react-native";
+import Texto from "../../../Components/Texto";
 import topo from "../../../assets/topo.png";
-import { Imagem } from "./styles";
+// import { Imagem } from "./styles";
+
+const width = Dimensions.get("screen").width;
 
 const Topo = ({ titulo }) => {
   return (
     <>
-      <Imagem src={topo} />
+      <Image source={topo} style={estilos.topo} />
       <Texto style={estilos.titulo}> {titulo}</Texto>
     </>
   );
@@ -16,6 +18,10 @@ const Topo = ({ titulo }) => {
 export default Topo;
 
 const estilos = StyleSheet.create({
+  topo: {
+    width: "100%",
+    height: (578 / 768) * width,
+  },
   titulo: {
     width: "100%",
     position: "absolute",
@@ -23,7 +29,7 @@ const estilos = StyleSheet.create({
     fontSize: 16,
     lineHeight: 26,
     color: "white",
-    padding: 16,
     fontWeight: "bold",
+    padding: 16,
   },
 });
