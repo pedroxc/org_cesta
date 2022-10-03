@@ -17,7 +17,7 @@ export default function App() {
     return <View />;
   }
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ alignItems: "center" }}>
       <StatusBar />
       <Cesta {...mock} />
     </SafeAreaView>

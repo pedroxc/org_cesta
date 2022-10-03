@@ -12,8 +12,27 @@ export const Container = styled.div`
 `;
 
 export const Layer = styled.img`
-  position: absolute;
+  z-index: -1;
+  position: fixed;
 `;
+export const TopLayout = styled.img`
+  z-index: 4;
+  position: fixed;
+`;
+export const BotLayout = styled.img`
+  z-index: 4;
+  position: fixed;
+  top: 600px;
+`;
+export const WhiteBanner = styled.div`
+  width: 300px;
+  background-color: white;
+  z-index: 4;
+  height: 1000px;
+  position: fixed;
+  top: 663px;
+`;
+
 export const BackButton = styled.button`
   border: none;
   background-color: white;
