@@ -1,29 +1,30 @@
 import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Image } from "react-native";
 import Topo from "./Components/Topo";
 import Detalhes from "./Components/Detalhes";
-import Item from "./Components/Item";
-import Texto from "../../Components/Texto";
+import Itens from "./Components/Itens";
+import layout from "../../assets/layout.png";
+import topLayout from "../../assets/layoutTop.png";
+import botLayout from "../../assets/layoutBot.png";
+import { Container, Layer, TopLayout, BotLayout, WhiteBanner } from "./styles";
 
 export default function Cesta({ topo, detalhes, itens }) {
   return (
     <>
-      <FlatList
-        data={itens.lista}
-        renderItem={Item}
-        keyExtractor={({ nome }) => nome}
-        ListHeaderComponent={() => {
-          return (
-            <>
-              <Topo {...topo} />
-              <View style={estilos.cesta}>
-                <Detalhes {...detalhes} />
-                <Texto style={estilos.titulo}>{itens.titulo}</Texto>
-              </View>
-            </>
-          );
-        }}
-      />
+      <TopLayout src={topLayout} />
+      <BotLayout src={botLayout} />
+      <Layer src={layout} />
+      <WhiteBanner />
+
+      <Container>
+        <View>
+          <Topo {...topo} />
+          <View style={estilos.cesta}>
+            <Detalhes {...detalhes} />
+            <Itens {...itens} />
+          </View>
+        </View>
+      </Container>
     </>
   );
 }
@@ -32,13 +33,5 @@ const estilos = StyleSheet.create({
   cesta: {
     paddingVertical: 8,
     paddingHorizontal: 16,
-  },
-  titulo: {
-    color: "#464646",
-    fontWeight: "bold",
-    marginTop: 32,
-    marginBottom: 8,
-    fontSize: 20,
-    lineHeight: 32,
   },
 });
