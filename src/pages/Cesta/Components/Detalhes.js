@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, Button } from "react-native";
 import Texto from "../../../Components/Texte";
 
 const Detalhes = ({ nome, logoFazenda, nomeFazenda, descricao, preco }) => {
@@ -12,6 +12,7 @@ const Detalhes = ({ nome, logoFazenda, nomeFazenda, descricao, preco }) => {
       </View>
       <Texto style={estilos.descrição}>{descricao}</Texto>
       <Texto style={estilos.preco}>{preco}</Texto>
+      <Button title="Comprar" />
     </>
   );
 };
